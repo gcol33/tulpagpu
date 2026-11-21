@@ -83,7 +83,7 @@ device_gate_summary <- function(csv) {
     paste('Complete fit ladder:',complete),paste('Auto measured at the calibrated gate:',gate_matches),
     paste('Auto within measured noise at every size:',if(complete)auto_safe_all else NA),
     paste('Sparse fit speed-up exceeds measured noise:',available),paste('Auto delivers that speed-up:',delivered))
-  source('tools/device-equivalence-map.R',local=TRUE)
+  source('tests/testthat/helper-equivalence-map.R',local=TRUE)
   map <- device_equivalence_map()
   stopifnot(setequal(map$operation,operations))
   lines <- c(lines,'','## Device operation matrix','',

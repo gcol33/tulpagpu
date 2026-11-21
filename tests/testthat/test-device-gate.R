@@ -1,5 +1,4 @@
 test_that('every device operation has named equivalence evidence and benchmark rows', {
-  source(testthat::test_path('..','..','tools','device-equivalence-map.R'),local=TRUE)
   map <- device_equivalence_map()
   expect_setequal(map$operation,tulpa:::cpp_device_operations())
   timings <- read.csv(system.file('device','benchmarks.csv',package='tulpaGPU'))

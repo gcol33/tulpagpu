@@ -1,0 +1,11 @@
+src/*.o
+src/*.dll
+src/*.so
+src/*.def
+*.Rcheck/
+*.tar.gz
+*.log
+dev_notes/
+.claude/
+tests/testthat/testthat-problems.rds
+tests/testthat/_problems/

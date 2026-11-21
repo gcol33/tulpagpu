@@ -1,0 +1,40 @@
+Package: tulpaGPU
+Title: CUDA Backend for the 'tulpa' Bayesian Engine
+Version: 0.1.0
+Authors@R:
+    person("Gilles", "Colling", , "gilles.colling051@gmail.com", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0003-3070-6066"))
+Description: Runs the device operations of the 'tulpa' engine on an NVIDIA
+    graphics processing unit: dense and sparse Cholesky factorizations,
+    factorizations batched across the cells of a nested Laplace grid, basis
+    products, observation scatter and fused likelihood kernels. The CUDA driver
+    and the 'cuSOLVER', 'cuBLAS', 'NVRTC' and 'cuDSS' libraries are loaded at
+    run time, so installing the package needs only a C++ compiler. Once loaded,
+    'tulpa' sends each operation to the device when it lies above its measured
+    size crossover, or always under control$device = "cuda".
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+SystemRequirements: C++17; at run time an NVIDIA driver and the CUDA 12 or 13
+    runtime libraries
+Depends:
+    R (>= 4.1.0)
+Imports:
+    Rcpp (>= 1.0.12),
+    tulpa (>= 0.8.0),
+    tools,
+    utils,
+    stats
+Suggests:
+    testthat (>= 3.0.0),
+    Matrix,
+    withr
+Remotes:
+    gcol33/tulpa
+LinkingTo:
+    Rcpp,
+    tulpa
+Config/testthat/edition: 3
+URL: https://github.com/gcol33/tulpagpu
+BugReports: https://github.com/gcol33/tulpagpu/issues
+Config/roxygen2/version: 8.1.0

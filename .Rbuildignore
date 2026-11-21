@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.github$
+^tools$
+^dev_notes$
+^LICENSE\.md$
+^\.claude$
+^cran-comments\.md$
